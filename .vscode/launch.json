@@ -1,0 +1,48 @@
+{
+    // Verwendet IntelliSense zum Ermitteln möglicher Attribute.
+    // Zeigen Sie auf vorhandene Attribute, um die zugehörigen Beschreibungen anzuzeigen.
+    // Weitere Informationen finden Sie unter https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Tests",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "${workspaceFolder}\\node_modules\\.bin\\ts-mocha",
+            "runtimeArgs": ["--paths", "${workspaceFolder}/tests/**/*.test.ts"],
+            "protocol": "inspector",
+        },
+        {
+            "name": "Tests (RBAC)",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "${workspaceFolder}\\node_modules\\.bin\\ts-mocha",
+            "runtimeArgs": ["--paths", "${workspaceFolder}/tests/**/*.test.ts"],
+            "env": { "RBAC": "true" },
+            "protocol": "inspector",
+        },
+        {
+            "name": "Run",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "node",
+            "runtimeArgs": ["--nolazy", "-r", "ts-node/register/transpile-only"],
+            "args": ["start.ts"],
+            "cwd": "${workspaceRoot}",
+            "internalConsoleOptions": "openOnSessionStart",
+            "skipFiles": ["<node_internals>/**", "node_modules/**"]
+        },
+        {
+            "name": "Run (RBAC)",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "node",
+            "runtimeArgs": ["--nolazy", "-r", "ts-node/register/transpile-only"],
+            "args": ["start.ts"],
+            "cwd": "${workspaceRoot}",
+            "env": { "RBAC": "true" },
+            "internalConsoleOptions": "openOnSessionStart",
+            "skipFiles": ["<node_internals>/**", "node_modules/**"]
+        }
+    ]
+}

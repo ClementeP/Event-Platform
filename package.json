@@ -1,0 +1,35 @@
+{
+  "scripts": {
+    "server": "ts-node start.ts",
+    "server-rbac": "cross-env RBAC=true ts-node start.ts",
+    "test": "ts-mocha --paths tests/**/*.test.ts",
+    "test-rbac": "cross-env RBAC=true ts-mocha --paths tests/**/*.test.ts"
+  },
+  "dependencies": {
+    "@graphql-tools/schema": "^7.1.5",
+    "apollo-server-express": "^3.0.2",
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "graphql": "^15.5.1",
+    "graphql-middleware": "^6.0.10",
+    "graphql-shield": "^7.5.0",
+    "lodash": "^4.17.21",
+    "mongoose": "^5.13.3"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/expect": "^24.3.0",
+    "@types/express": "^4.17.13",
+    "@types/express-session": "^1.17.4",
+    "@types/lodash": "^4.14.172",
+    "@types/mocha": "^9.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.32.0",
+    "ts-mocha": "^8.0.0",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.4.4"
+  }
+}
